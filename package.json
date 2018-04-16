@@ -31,6 +31,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-svg-sprite": "^1.4.0",
+    "postcss-hexrgba": "^1.0.0",
     "postcss-import": "^11.1.0",
     "postcss-mixins": "^6.2.0",
     "postcss-nested": "^3.0.0",

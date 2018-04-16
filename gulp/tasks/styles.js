@@ -7,7 +7,8 @@ sourcemaps = require('gulp-sourcemaps'),
 cssImport = require('postcss-import'),
 plumber = require('gulp-plumber'),
 notify = require('gulp-notify'),
-mixins = require('postcss-mixins');
+mixins = require('postcss-mixins'),
+hexrgba = require('postcss-hexrgba');
 
 // Plumber will display errors and end the task so the watch doesnt exit, additionally notify will output a popup
 const plumberOptions = {
@@ -24,7 +25,7 @@ gulp.task('styles', () => {
   return gulp.src('./app/assets/styles/styles.css')
     .pipe(plumber(plumberOptions))
     .pipe(sourcemaps.init())
-    .pipe(postcss([cssImport, mixins, cssvars, nested, autoprefixer]))
+    .pipe(postcss([cssImport, mixins, cssvars, nested, hexrgba, autoprefixer]))
     // User Gulp Plumber instead.
     // .on('error', function(err) { 
     //   console.log(err.toString());
