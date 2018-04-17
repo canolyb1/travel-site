@@ -888,79 +888,79 @@ a {
 Instead edit gulp/templates/sprite  */
 
 .icon {
-      background-image: url('/assets/images/sprites/sprite-d675eadb.svg');
+      background-image: url('/assets/images/sprites/sprite-99df9695.svg');
     }
 
 .icon--clear-view-escapes {
-    width: 142.4px;
-    height: 59.53px;
+    width: 162.4px;
+    height: 79.53px;
     background-position: 0 0;
   }
 
 .icon--comment {
-    width: 64px;
-    height: 64px;
-    background-position: 99.70443349753694% 0;
+    width: 84px;
+    height: 84px;
+    background-position: 99.75308641975309% 36.206896551724135%;
   }
 
 .icon--facebook {
-    width: 21.23px;
-    height: 42.01px;
-    background-position: 26.040607071652357% 45.795830448496034%;
+    width: 41.23px;
+    height: 62.01px;
+    background-position: 29.394268117717047% 31.312256388046773%;
   }
 
 .icon--fire {
-    width: 56px;
-    height: 64px;
-    background-position: 0 99.56481481481481%;
+    width: 76px;
+    height: 84px;
+    background-position: 0 63.59051724137931%;
   }
 
 .icon--globe {
-    width: 64px;
-    height: 64px;
-    background-position: 27.586206896551722% 99.56481481481481%;
+    width: 84px;
+    height: 84px;
+    background-position: 31.275720164609055% 63.59051724137931%;
   }
 
 .icon--instagram {
-    width: 42.01px;
-    height: 42.01px;
-    background-position: 63.2917018534157% 49.234556504346486%;
+    width: 62.01px;
+    height: 62.01px;
+    background-position: 61.28533152194422% 33.07216819559825%;
   }
 
 .icon--mail {
-    width: 64px;
-    height: 48px;
-    background-position: 0 48.00806451612903%;
+    width: 84px;
+    height: 68px;
+    background-position: 0 32.068548387096776%;
   }
 
 .icon--rain {
-    width: 64px;
-    height: 64px;
-    background-position: 99.70443349753694% 59.25925925925926%;
+    width: 84px;
+    height: 84px;
+    background-position: 0 99.79741379310344%;
   }
 
 .icon--star {
-    width: 64px;
-    height: 64px;
-    background-position: 59.11330049261084% 99.56481481481481%;
+    width: 84px;
+    height: 84px;
+    background-position: 99.75308641975309% 0;
   }
 
 .icon--twitter {
-    width: 51.78px;
-    height: 42.06px;
-    background-position: 94.04330452560171% 98.50700323226104%;
+    width: 71.78px;
+    height: 62.06px;
+    background-position: 94.9768826894444% 66.1573600063007%;
   }
 
 .icon--wifi {
-    width: 60px;
-    height: 64px;
-    background-position: 68.79227053140097% 0;
+    width: 80px;
+    height: 84px;
+    background-position: 65.74898785425101% 0;
   }
 
 .icon--youtube {
-    width: 34.75px;
-    height: 42px;
-    background-position: 36.69752421959096% 45.792307692307695%;
+    width: 54.75px;
+    height: 62px;
+    background-position: 58.76951331496786% 58.08267716535433%;
   }
 
 .site-footer {
@@ -991,7 +991,12 @@ Instead edit gulp/templates/sprite  */
   top: 0;
   z-index: 2;
   padding: 10px 0;
+  transition: background-color .3s ease-out;
 }
+
+.site-header--is-expanded {
+    background-color: rgba(47,85,114, .55);
+  }
 
 @media (min-width: 800px) {
 
@@ -1001,8 +1006,11 @@ Instead edit gulp/templates/sprite  */
 }
   }
 
+@media (min-width: 800px) {
+
 .site-header__btn-container {
-    float: right;
+      float: right
+  }
   }
 
 .site-header__logo {
@@ -1031,30 +1039,117 @@ Instead edit gulp/templates/sprite  */
   }
 
 .site-header__menu-content {
-    display: none;
+    text-align: center;
+    opacity: 0;
+    padding-top: 100px;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    transition: all .3s ease-out;
+    z-index: -10;
+    position: relative;
   }
 
 @media (min-width: 800px) {
 
 .site-header__menu-content {
-      display: block
+      opacity: 1;
+      z-index: 1;
+      padding-top: 0;
+      -webkit-transform: scale(1);
+              transform: scale(1)
   }
   }
 
+.site-header__menu-content--is-visible {
+      opacity: 1;
+      z-index: 1;
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+
 .site-header__menu-icon {
     width: 20px;
-    height: 20px;
-    background-color: white;
+    height: 19px;
     position: absolute;
     top: 10px;
     right: 10px;
+    z-index: 10;
   }
+
+.site-header__menu-icon::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background-color: white;
+      -webkit-transform-origin: 0 0;
+              transform-origin: 0 0;
+      transition: -webkit-transform .3s ease-out;
+      transition: transform .3s ease-out;
+      transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+    }
+
+.site-header__menu-icon__middle {
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background-color: white;
+      transition: all .3s ease-out;
+      -webkit-transform-origin: 0 50%;
+              transform-origin: 0 50%;
+    }
+
+.site-header__menu-icon::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background-color: white;
+      -webkit-transform-origin: 0 100%;
+              transform-origin: 0 100%;
+      transition: -webkit-transform .3s ease-out;
+      transition: transform .3s ease-out;
+      transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+    }
 
 @media (min-width: 800px) {
 
 .site-header__menu-icon {
       display: none
   }
+  }
+
+.site-header__menu-icon--close-x::before {
+      -webkit-transform: rotate(45deg) scaleX(1.25);
+              transform: rotate(45deg) scaleX(1.25);
+    }
+
+.site-header__menu-icon--close-x::after {
+      -webkit-transform: rotate(-45deg) scaleX(1.25) translateY(1px);
+              transform: rotate(-45deg) scaleX(1.25) translateY(1px);
+    }
+
+.site-header__menu-icon--close-x .site-header__menu-icon__middle {
+      -webkit-transform: scaleX(0);
+              transform: scaleX(0);
+      opacity: 0;
+    }
+
+.primary-nav {
+  padding-top: 10px;
+}
+
+@media (min-width: 800px) {
+
+.primary-nav {
+    padding-top: 0
+}
   }
 
 .primary-nav ul {
@@ -1070,12 +1165,35 @@ Instead edit gulp/templates/sprite  */
 
 .primary-nav li {
     list-style: none;
-    float: left;
-    padding-right: 20px;
+    display: inline-block;
+    padding-right: 7px;
   }
 
+@media (min-width: 800px) {
+
+.primary-nav li {
+      padding-right: 20px;
+      display: block;
+      float: left
+  }
+  }
+
+.primary-nav li:last-child {
+    padding-right: 0;
+  }
+
+@media (min-width: 800px) {
+
+.primary-nav li:last-child {
+      padding-right: 20px
+  }
+  }
+
+@media (min-width: 800px) {
+
 .primary-nav--pull-right {
-    float:right;
+      float:right
+  }
   }
 
 .primary-nav a {
@@ -1083,6 +1201,17 @@ Instead edit gulp/templates/sprite  */
     color: white;
     text-decoration: none;
     font-weight: 300;
-    padding: 12px 0;
+    padding: 5px 8px;
+    font-size: .8rem;
+    background-color: rgba(47,85,114, .5);
+  }
+
+@media (min-width: 800px) {
+
+.primary-nav a {
+      font-size: 1rem;
+      padding: 12px 0;
+      background-color: transparent
+  }
   }
 /*# sourceMappingURL=styles.css.map */

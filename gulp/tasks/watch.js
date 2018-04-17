@@ -10,8 +10,9 @@ gulp.task('watch', () => {
     browser: ['chrome']
   });
 
-  gulp.watch('./app/index.html', ['html']);
+  gulp.watch('app/index.html', ['html']);
   gulp.watch('app/assets/styles/**/*.css', ['cssInject']);
+  gulp.watch('app/assets/scripts/**/*.js', ['scriptsRefresh'])
 });
 
 // set up css inject, styles is a dependency that gets run first.
@@ -21,5 +22,9 @@ gulp.task('cssInject', ['styles'], () => {
 });
 
 gulp.task('html', () => {
+  browserSync.reload();
+});
+
+gulp.task('scriptsRefresh', ['scripts'], () => {
   browserSync.reload();
 });
