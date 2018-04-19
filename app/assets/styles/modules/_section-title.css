@@ -29,4 +29,9 @@
   &--blue {
     color: $mainBlue;
   }
+
+  &--no-b-margin {
+    margin-top: 0;
+    margin-bottom: 0rem;
+  }
 }

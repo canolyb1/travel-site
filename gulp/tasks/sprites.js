@@ -6,7 +6,7 @@ del = require('del');
 const spriteConfig = {
   shape: {
     spacing: { // Add padding
-      padding: 10
+      padding: 1
     }
   },
   mode: {
