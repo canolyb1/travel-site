@@ -11,4 +11,7 @@ require('./gulp/tasks/sprites');
 // Scripts Tasks
 require('./gulp/tasks/scripts');
 
+// Modernizr Task
+require('./gulp/tasks/modernizr');
+
 gulp.task('default', ['styles', 'watch']);
